@@ -47,7 +47,7 @@ class ItGenPage : AppCompatActivity() {
             ActivityCompat.requestPermissions(this, arrayOf<String>(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     , EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE)
         }
-        
+
     }
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
@@ -60,6 +60,7 @@ class ItGenPage : AppCompatActivity() {
                     "Proszę zmienić uprawnienia dla aplikacji w ustawieniach.", Toast.LENGTH_SHORT).show()
         }
     }
+    
     fun saveImage(image: Bitmap): String {
         var savedImagePath: String? = null
         var imageFileName = intent.getCharSequenceExtra("it_name_gen").toString() + "_" +getTimeStamp() + ".jpg"
