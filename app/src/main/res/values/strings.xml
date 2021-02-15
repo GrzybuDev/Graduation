@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">LendAll</string>
+
+    <string name="accept">ZATWIERDŹ</string>
+    <string name="delete">USUŃ</string>
+    <string name="add">DODAJ</string>
+    <string name="edit">EDYTUJ</string>
+    <string name="show">POKAŻ</string>
+    <string name="yes">TAK</string>
+    <string name="no">NIE</string>
+    <string name="qr">QR</string>
+
+    <string name="wyp">WYPOŻYCZ</string>
+    <string name="zwr">ZWROT</string>
+    <string name="it">PRZEDMIOTY</string>
+    <string name="us">UŻYTKOWNICY</string>
+    <string name="banner">TU BĘDZIE BANNER</string>
+
+    <string name="addusertitle">Dodaj Użytkowinka</string>
+    <string name="adduserfirstname">Imię</string>
+    <string name="adduserlastname">Nazwisko</string>
+    <string name="adduseremail">E-mail</string>
+    <string name="adduseraddress">Adres zamieszkania</string>
+    <string name="addusertel">Telefon</string>
+    <string name="editusertitle">Edytuj Użytkowinka</string>
+    <string name="deluserque">Czy na pewno chcesz usunąć tego użytkownika?</string>
+    <string name="showusertitle">Użytkownik</string>
+
+    <string name="additemtitle">Dodaj Przedmiot</string>
+    <string name="additemname">Nazwa</string>
+    <string name="additemdes">Opis</string>
+    <string name="delitemque">Czy na pewno chcesz usunąć ten przedmiot?</string>
+    <string name="edititemtitle">Edytuj Przedmiot</string>
+
+    <string name="lendtitle">Wypożycz</string>
+    <string name="lendaddtitle">Wybierz przedmiot</string>
+    <string name="lendadditemname">Nazwa przedmiotu</string>
+
+</resources>
