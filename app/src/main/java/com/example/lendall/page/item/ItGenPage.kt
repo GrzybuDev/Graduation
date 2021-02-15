@@ -60,7 +60,7 @@ class ItGenPage : AppCompatActivity() {
                     "Proszę zmienić uprawnienia dla aplikacji w ustawieniach.", Toast.LENGTH_SHORT).show()
         }
     }
-    
+
     fun saveImage(image: Bitmap): String {
         var savedImagePath: String? = null
         var imageFileName = intent.getCharSequenceExtra("it_name_gen").toString() + "_" +getTimeStamp() + ".jpg"
