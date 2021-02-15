@@ -36,6 +36,7 @@ class ItGenPage : AppCompatActivity() {
         saveImage(bitmap)
         val intent: Intent = Intent(applicationContext,ItPage::class.java)
         startActivity(intent)
+
     }
     fun checkPremission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -46,6 +47,7 @@ class ItGenPage : AppCompatActivity() {
             ActivityCompat.requestPermissions(this, arrayOf<String>(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     , EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE)
         }
+        
     }
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
