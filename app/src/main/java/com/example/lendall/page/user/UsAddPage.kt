@@ -1,7 +1,10 @@
 package com.example.lendall.page.user
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.lendall.ObslugaEmail
@@ -25,7 +28,7 @@ class UsAddPage : AppCompatActivity() {
             val UsAddAddressEdit = UsAddAddressEdit.text.toString()
             val UsAddEmailEdit = UsAddEmailEdit.text.toString()
             val UsAddTelEdit = UsAddTelEdit.text.toString()
-            var user = User(UsAddFirstnameEdit,UsAddLastnameEdit,UsAddAddressEdit,UsAddEmailEdit,UsAddTelEdit)
+            val user = User(UsAddFirstnameEdit,UsAddLastnameEdit,UsAddAddressEdit,UsAddEmailEdit,UsAddTelEdit)
             viewModel.insertUsers(user)
             val intent: Intent = Intent(applicationContext, UsPage::class.java)
             startActivity(intent)
@@ -34,8 +37,16 @@ class UsAddPage : AppCompatActivity() {
     }
     override fun onBackPressed() {
         super.onBackPressed()
-        var intent: Intent = Intent(applicationContext, UsPage::class.java)
+        val intent: Intent = Intent(applicationContext, UsPage::class.java)
         startActivity(intent)
+    }
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            val imm: InputMethodManager =
+                    getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
     }
 }
 

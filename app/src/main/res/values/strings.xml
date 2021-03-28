@@ -36,4 +36,7 @@
     <string name="lendaddtitle">Wybierz przedmiot</string>
     <string name="lendadditemname">Nazwa przedmiotu</string>
 
+    <string name="returntitle">Zwrot</string>
+    <string name="returnbutton">Powrót</string>
+
 </resources>

@@ -1,8 +1,11 @@
 package com.example.lendall.page
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -73,7 +76,15 @@ class ZwrPage : AppCompatActivity() {
     }
     override fun onBackPressed() {
         super.onBackPressed()
-        var intent: Intent = Intent(applicationContext, MainActivity::class.java)
+        val intent: Intent = Intent(applicationContext, MainActivity::class.java)
         startActivity(intent)
+    }
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            val imm: InputMethodManager =
+                    getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
     }
 }

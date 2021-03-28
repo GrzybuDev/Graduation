@@ -1,7 +1,10 @@
 package com.example.lendall.page.item
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.lendall.R
@@ -26,7 +29,7 @@ class ItEditPage : AppCompatActivity() {
             viewModel.editItem(ItEditNameEdit,ItEditDesEdit,
                     intent.getCharSequenceExtra("it_name_edit").toString(),
                     intent.getCharSequenceExtra("it_des_edit").toString())
-            var intent: Intent = Intent(applicationContext, ItPage::class.java)
+            val intent: Intent = Intent(applicationContext, ItPage::class.java)
             startActivity(intent)
         }
     }
@@ -40,8 +43,17 @@ class ItEditPage : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        var intent: Intent = Intent(applicationContext, ItPage::class.java)
+        val intent: Intent = Intent(applicationContext, ItPage::class.java)
         startActivity(intent)
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            val imm: InputMethodManager =
+                    getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
     }
 }
 

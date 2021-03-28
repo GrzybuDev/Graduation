@@ -15,7 +15,7 @@
         android:layout_marginEnd="16dp"
         android:gravity="center"
         android:lineSpacingExtra="8sp"
-        android:text="@string/lendtitle"
+        android:text="@string/returntitle"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
@@ -59,8 +59,10 @@
 
     <EditText
         android:id="@+id/ZwrItName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="46dp"
         android:ems="10"
         android:inputType="textPersonName"
