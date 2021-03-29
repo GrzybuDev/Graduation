@@ -10,7 +10,6 @@ import com.example.lendall.page.lenditem.WypPage
 import com.example.lendall.page.user.UsPage
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,7 +35,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
     override fun onBackPressed() {
         super.onBackPressed()
         finish();
