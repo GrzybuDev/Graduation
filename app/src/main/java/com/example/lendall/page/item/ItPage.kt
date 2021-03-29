@@ -30,6 +30,7 @@ class ItPage : AppCompatActivity() {
             .create(ItemViewModel::class.java)
         recyclerView = findViewById(R.id.ItPageRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(applicationContext)
+
         listItem = viewModel.getAllItem()
         listItem.observe(this, Observer {
             if (it.isNotEmpty()) {
@@ -38,14 +39,14 @@ class ItPage : AppCompatActivity() {
             }
         })
         ItPageAddButton.setOnClickListener {
-            var intent: Intent = Intent(applicationContext, ItAddPage::class.java)
+            val intent: Intent = Intent(applicationContext, ItAddPage::class.java)
             startActivity(intent)
         }
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-        var intent: Intent = Intent(applicationContext, MainActivity::class.java)
+        val intent: Intent = Intent(applicationContext, MainActivity::class.java)
         startActivity(intent)
     }
 }

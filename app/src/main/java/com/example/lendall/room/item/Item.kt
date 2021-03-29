@@ -5,8 +5,6 @@ import androidx.room.PrimaryKey
 
 @Entity(indices = arrayOf(Index(value = ["it_name"], unique = true)))
 data class Item(
-      /*  @PrimaryKey(autoGenerate = true)
-        var it_id: Int = 0,*/
         var it_name:String,
         var it_des:String,
         var it_ace: String)
@@ -16,6 +14,10 @@ data class Item(
 }
 
 
+
+
+/*  @PrimaryKey(autoGenerate = true)
+       var it_id: Int = 0,*/
 
 //@Entity(tableName = "Item")
 /*@ColumnInfo(name = "it_name")
